@@ -27,4 +27,4 @@ jobs:
         npm install -g pnpm
         pnpm install
         cd projects/testApp
-        pnpm build
+        npm run build
