@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const MyPageWrapper = styled.section`
   max-width: 1280px;

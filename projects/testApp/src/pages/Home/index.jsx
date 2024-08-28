@@ -13,14 +13,25 @@ const { JMProfiler } = SharedUI.default;
 
 const HomePage = () => {
   const { ref, inView } = useInView();
-  const { data, isLoading, isError, error, isFetchingNextPage, fetchNextPage, hasNextPage } =
-    useInfiniteQuery('products', ({ pageParam = 1 }) => getProductsList(pageParam), {
+  const {
+    data,
+    isLoading,
+    isError,
+    error,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage,
+  } = useInfiniteQuery(
+    'products',
+    ({ pageParam = 1 }) => getProductsList(pageParam),
+    {
       getNextPageParam: (lastPage, allPage) => {
         const nextPage = allPage.length + 1;
 
         return lastPage.next ? nextPage : undefined;
       },
-    });
+    }
+  );
 
   useEffect(() => {
     if (inView && hasNextPage) fetchNextPage();
@@ -33,7 +44,12 @@ const HomePage = () => {
     <HomeWrapper>
       <JMProfiler>
         <MainBanner />
-        <ProductsList data={data} isLoading={isLoading} isError={isError} error={error} />
+        <ProductsList
+          data={data}
+          isLoading={isLoading}
+          isError={isError}
+          error={error}
+        />
         {isFetchingNextPage ? <Loading /> : <div ref={ref}></div>}
       </JMProfiler>
     </HomeWrapper>

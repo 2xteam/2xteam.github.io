@@ -13,7 +13,11 @@ import CartList from '../../components/Cart/CartList/CartList';
 import CartTotalPrice from '../../components/Cart/CartTotalPrice/CartTotalPrice';
 import Loading from '../../components/common/Loading/Loading';
 import Modal from '../../components/common/Modal/Modal';
-import { deleteCartItem, getUserCart, setUserCart } from '../../lib/api/axios-api';
+import {
+  deleteCartItem,
+  getUserCart,
+  setUserCart,
+} from '../../lib/api/axios-api';
 
 const CartPage = () => {
   const isType = localStorage.getItem('usertype');
@@ -33,7 +37,9 @@ const CartPage = () => {
 
   const toggleMutation = useMutation(setUserCart, {
     onSuccess(res) {
-      const cartItemResultIdx = cartData.findIndex((el) => el.product_id === res.product_id);
+      const cartItemResultIdx = cartData.findIndex(
+        (el) => el.product_id === res.product_id
+      );
 
       setCartData((prev) => {
         return [...prev].map((item, idx) => {
@@ -53,7 +59,9 @@ const CartPage = () => {
 
   const incrementMutation = useMutation(setUserCart, {
     onSuccess(res) {
-      const cartItemResultIdx = cartData.findIndex((el) => el.product_id === res.product_id);
+      const cartItemResultIdx = cartData.findIndex(
+        (el) => el.product_id === res.product_id
+      );
       setCartData((prev) => {
         return [...prev].map((item, idx) => {
           return idx === cartItemResultIdx
@@ -71,7 +79,9 @@ const CartPage = () => {
   });
   const decrementMutation = useMutation(setUserCart, {
     onSuccess(res) {
-      const cartItemResultIdx = cartData.findIndex((el) => el.product_id === res.product_id);
+      const cartItemResultIdx = cartData.findIndex(
+        (el) => el.product_id === res.product_id
+      );
 
       setCartData((prev) => {
         return [...prev].map((item, idx) => {
@@ -180,7 +190,7 @@ const CartPage = () => {
       }
       return acc;
     },
-    { price: 0, shipping_fee: 0 },
+    { price: 0, shipping_fee: 0 }
   );
   if (!isLoggin)
     return (
@@ -194,7 +204,8 @@ const CartPage = () => {
           navigate('/');
         }}
       >
-        장바구니는 로그인 이후 이용하실 수 있습니다. 로그인 페이지로 이동 하시겠습니까?
+        장바구니는 로그인 이후 이용하실 수 있습니다. 로그인 페이지로 이동
+        하시겠습니까?
       </Modal>
     );
   if (!(isType === 'BUYER'))
@@ -245,7 +256,10 @@ const CartPage = () => {
         onClickModal={onClickModal}
         onClickOneCartOrder={onClickOneCartOrder}
       />
-      <CartTotalPrice sumCartItem={sumCartItem} onClickCartOrder={onClickCartOrder} />
+      <CartTotalPrice
+        sumCartItem={sumCartItem}
+        onClickCartOrder={onClickCartOrder}
+      />
     </CartWrapper>
   );
 };

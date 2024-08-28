@@ -1,7 +1,13 @@
 import { CartHeaderWrapper } from './styled';
 import { CheckBox } from '../../common/Input/CheckBox/CheckBox';
 
-const CartHeader = ({ cartStateData, isActive, onHandleClick, setIsActive, setCartData }) => {
+const CartHeader = ({
+  cartStateData,
+  isActive,
+  onHandleClick,
+  setIsActive,
+  setCartData,
+}) => {
   return (
     <CartHeaderWrapper>
       <ul>

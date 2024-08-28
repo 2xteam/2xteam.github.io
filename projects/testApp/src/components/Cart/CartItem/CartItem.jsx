@@ -5,7 +5,12 @@ import { Button } from '../../common/Button/Button';
 import { CheckBox } from '../../common/Input/CheckBox/CheckBox';
 import QuantityButton from '../../common/QuantityButton/QuantityButton';
 
-const CartItem = ({ cartStateData, onHandleClick, onClickModal, onClickOneCartOrder }) => {
+const CartItem = ({
+  cartStateData,
+  onHandleClick,
+  onClickModal,
+  onClickOneCartOrder,
+}) => {
   const {
     is_active,
     quantity,
@@ -20,8 +25,12 @@ const CartItem = ({ cartStateData, onHandleClick, onClickModal, onClickOneCartOr
   } = cartStateData;
 
   const convetedPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  const convetedTotalPrice = (quantity * price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  const convetedShipping_fee = shipping_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const convetedTotalPrice = (quantity * price)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const convetedShipping_fee = shipping_fee
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
   return (
     <>
@@ -52,7 +61,9 @@ const CartItem = ({ cartStateData, onHandleClick, onClickModal, onClickOneCartOr
           <p className="price">{convetedPrice}원</p>
           <p className="delivery">
             {shipping_method} /{' '}
-            {convetedShipping_fee === '0' ? `무료배송` : `${convetedShipping_fee}원`}
+            {convetedShipping_fee === '0'
+              ? `무료배송`
+              : `${convetedShipping_fee}원`}
           </p>
         </li>
         <li className="quantity-btn">

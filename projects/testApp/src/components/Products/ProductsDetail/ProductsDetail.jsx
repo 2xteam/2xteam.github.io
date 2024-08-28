@@ -1,7 +1,7 @@
-import { InnerWrapper } from "../../common/Wrapper/InnerWrapper";
-import { DetailWrapper } from "./styled";
-import { Button } from "../../common/Button/Button";
-import QuantityButton from "../../common/QuantityButton/QuantityButton";
+import { DetailWrapper } from './styled';
+import { Button } from '../../common/Button/Button';
+import QuantityButton from '../../common/QuantityButton/QuantityButton';
+import { InnerWrapper } from '../../common/Wrapper/InnerWrapper';
 
 const ProductsDetail = ({
   data,
@@ -32,10 +32,10 @@ const ProductsDetail = ({
                 num={amount}
                 maxNum={data.stock}
                 onClickMinus={() => {
-                  onClickQuantity("decrement");
+                  onClickQuantity('decrement');
                 }}
                 onClickPlus={() => {
-                  onClickQuantity("increment");
+                  onClickQuantity('increment');
                 }}
               />
               <div className="sum-box">

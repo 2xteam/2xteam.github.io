@@ -1,7 +1,9 @@
 import { OrderItemWrapper } from './styled';
 
 const OrderItem = ({ data }) => {
-  const convetedShippingFee = data.shipping_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const convetedShippingFee = data.shipping_fee
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   const convetedPrice = (data.price * data.quantity)
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -16,7 +18,9 @@ const OrderItem = ({ data }) => {
         <p className="product-quantity">수량 : {data.quantity}개</p>
       </li>
       <li className="sale">-</li>
-      <li className="delivery">{data.shipping_fee ? `${convetedShippingFee} 원` : '무료배송'}</li>
+      <li className="delivery">
+        {data.shipping_fee ? `${convetedShippingFee} 원` : '무료배송'}
+      </li>
       <li className="product-price">{convetedPrice}원</li>
     </OrderItemWrapper>
   );

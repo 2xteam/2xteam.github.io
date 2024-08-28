@@ -8,7 +8,13 @@ import Cart from '../../assets/icon-shopping-cart.svg';
 import User2 from '../../assets/icon-user-2.svg';
 import User from '../../assets/icon-user.svg';
 
-const MainHeader = ({ token, location, onUserToggleMenu, userMenu, onLogOut }) => {
+const MainHeader = ({
+  token,
+  location,
+  onUserToggleMenu,
+  userMenu,
+  onLogOut,
+}) => {
   return (
     <HeaderWrapper>
       <InnerHeader>
@@ -25,7 +31,10 @@ const MainHeader = ({ token, location, onUserToggleMenu, userMenu, onLogOut }) =
         </form>
         <div className="header_user_button">
           <NavLink className="cart-btn" to="/cart">
-            <img src={location.pathname !== '/cart' ? Cart : Cart2} alt="장바구니 아이콘" />
+            <img
+              src={location.pathname !== '/cart' ? Cart : Cart2}
+              alt="장바구니 아이콘"
+            />
             <p>장바구니</p>
           </NavLink>
           {token ? (

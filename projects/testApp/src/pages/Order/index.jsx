@@ -48,7 +48,10 @@ const OrderPage = () => {
   }, 0);
 
   useEffect(() => {
-    if (data[0].order_kind === 'direct_order' || data[0].order_kind === 'cart_one_order') {
+    if (
+      data[0].order_kind === 'direct_order' ||
+      data[0].order_kind === 'cart_one_order'
+    ) {
       setInputValue({
         ...inputValue,
         order_kind: data[0].order_kind,

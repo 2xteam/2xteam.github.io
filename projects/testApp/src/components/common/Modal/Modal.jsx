@@ -1,7 +1,13 @@
 import { ModalWrapper } from './styled';
 import { Button } from '../Button/Button';
 
-const Modal = ({ children, rejectText, resultText, onClickReject, onClickResult }) => {
+const Modal = ({
+  children,
+  rejectText,
+  resultText,
+  onClickReject,
+  onClickResult,
+}) => {
   return (
     <ModalWrapper>
       <button className="modal-close-btn" onClick={onClickReject}></button>

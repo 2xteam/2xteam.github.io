@@ -1,12 +1,12 @@
-import { useQuery } from "react-query";
-import { getMyOrder } from "../../lib/api/axios-api";
-import Loading from "../../components/common/Loading/Loading";
+import { useQuery } from 'react-query';
 
-import MyOrderList from "../../components/MyOrder/MyOrderList/MyOrderList";
-import MyPageWrapper from "./styled";
+import MyPageWrapper from './styled';
+import MyOrderList from '../../components/MyOrder/MyOrderList/MyOrderList';
+import Loading from '../../components/common/Loading/Loading';
+import { getMyOrder } from '../../lib/api/axios-api';
 
 const MyPage = () => {
-  const { data, isLoading, isError } = useQuery(["order"], getMyOrder);
+  const { data, isLoading, isError } = useQuery(['order'], getMyOrder);
 
   console.log(data);
 

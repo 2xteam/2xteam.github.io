@@ -73,17 +73,20 @@ const SignUpPage = () => {
     },
   });
 
-  const companyRegistrationNumberCheckMutation = useMutation(postCompanyRegistrationNumberCheck, {
-    onSuccess(data) {
-      setCompanyNumberCheck(data.Success);
-    },
-    onError(err) {
-      setErrors({
-        ...errors,
-        company_registration_number: err.response.data.FAIL_Message,
-      });
-    },
-  });
+  const companyRegistrationNumberCheckMutation = useMutation(
+    postCompanyRegistrationNumberCheck,
+    {
+      onSuccess(data) {
+        setCompanyNumberCheck(data.Success);
+      },
+      onError(err) {
+        setErrors({
+          ...errors,
+          company_registration_number: err.response.data.FAIL_Message,
+        });
+      },
+    }
+  );
 
   const buyerSubmitMutation = useMutation(postSignUpBuyer, {
     onSuccess(data) {
@@ -181,7 +184,8 @@ const SignUpPage = () => {
       if (name === 'username') {
         setErrors({
           ...errors,
-          [name]: '6자 이상 20자 이내의 영문 소문자, 대문자, 숫자만 사용 가능합니다.',
+          [name]:
+            '6자 이상 20자 이내의 영문 소문자, 대문자, 숫자만 사용 가능합니다.',
         });
       } else if (name === 'password') {
         setErrors({
@@ -196,9 +200,13 @@ const SignUpPage = () => {
       } else if (name === 'phone_number') {
         setErrors({
           ...errors,
-          [name]: '핸드폰번호는 01*으로 시작해야 하는 10~11자리 숫자여야 합니다.',
+          [name]:
+            '핸드폰번호는 01*으로 시작해야 하는 10~11자리 숫자여야 합니다.',
         });
-      } else if (userType === 'SELLER' && name === 'company_registration_number') {
+      } else if (
+        userType === 'SELLER' &&
+        name === 'company_registration_number'
+      ) {
         setErrors({
           ...errors,
           [name]: '사업자등록번호는 10자리로 이루어진 숫자입니다.',

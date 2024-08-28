@@ -23,7 +23,7 @@ const MyOrderItem = (props) => {
     () => getProductsDetail(order_items[0]),
     {
       enabled: !!order_items,
-    },
+    }
   );
 
   if (isLoading) return <Loading />;
@@ -36,7 +36,8 @@ const MyOrderItem = (props) => {
           <div className="text-box">
             <p className="created-day">{created_at.split('T')[0]} 결제</p>
             <p className="product-name">
-              {data.product_name} {order_items.length > 1 && `외 ${order_items.length - 1} 개`}
+              {data.product_name}{' '}
+              {order_items.length > 1 && `외 ${order_items.length - 1} 개`}
             </p>
             <strong className="total-price">
               {total_price.toLocaleString('ko-KR')} <span>원</span>
