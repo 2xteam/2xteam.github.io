@@ -1,0 +1,23 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ES5", // es5 기준으로 컴파일 하는 설정
+    "lib": ["ESNext", "dom", "dom.iterable", "scripthost"],
+    "module": "ESNext", // require 문법을 사용하는 설정
+    "moduleResolution": "node",
+    "sourceMap": false, // 소스맵 '.map' 파일 생성 설정
+    "allowJs": true, // js 파일들 ts에서 import해서 쓸 수 있는지
+    "checkJs": true, // 일반 js 파일에서도 에러체크 여부
+    "noImplicitAny": false, // any타입 금지 여부
+    "strictNullChecks": true, // null, undefined 타입에 이상한 조작하면 에러를 띄우는 설정
+    "jsx": "react-jsx",
+    "strictFunctionTypes": true, //함수파라미터 타입체크 강하게
+    "strictPropertyInitialization": true, //class constructor 작성시 타입체크 강하게
+    "allowSyntheticDefaultImports": true, // import * as name from "name"; 형식 사용가능
+    "esModuleInterop": true, // 모든 가져오기에 대한 네임스페이스 객체 생성을 통해 CommonJS와 ES 모듈 간의 상호 운용성을 제공.
+    "skipLibCheck": true, // 모든 선언 파일(*.d.ts)의 타입 유형 검사 스킵
+    "isolatedModules": true, // 각 파일을 별도 모듈로 변환 ('ts.transpileModule'과 유사)
+    "resolveJsonModule": true, // json 확장자를 import 하는 규칙
+    "noUnusedLocals": false // 사용하지 않는 지역 변수에 대한 에러
+  }
+}
