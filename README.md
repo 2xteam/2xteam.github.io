@@ -4,7 +4,7 @@ You can click the Preview link to take a look at your changes.
 --->
 모노레포 프로젝트 입니다.
 
-- **스펙:** node v16.14.2 / pnpm v8.4.0
+- **스펙:** node v18.12 / pnpm v9.3.0
   > 자세한 스펙은 root 에 있는 package.josn 을 참고 하세요.
 - [pnpm 설치](https://pnpm.io/pnpm-cli)
 
