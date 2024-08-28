@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -30,6 +30,6 @@ jobs:
 
     - name: build
       run: |
-        cd projects/testApp
         unset CI  # 이 줄이 CI 변수를 제거합니다
         npm run build
+      working-directory: projects/testApp
